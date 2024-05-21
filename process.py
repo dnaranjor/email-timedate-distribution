@@ -17,7 +17,7 @@ def analizar_correo(archivo):
     asunto = msg['subject']
     fecha = msg['date']
     
-    if 'Vendiste' in asunto:
+    if ('Vendiste' in asunto or 'Pedido' in asunto or 'Nueva orden' in asunto or 'nueva compra' in asunto):
         # Convertir la fecha a un objeto datetime
         fecha_dt = datetime.strptime(fecha, '%a, %d %b %Y %H:%M:%S %z')
         return fecha_dt
